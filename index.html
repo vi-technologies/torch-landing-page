@@ -6,7 +6,7 @@
     <title>Deep Link Redirect</title>
     <script>
         // Function to detect user platform and redirect to the appropriate store
-        function detectPlatform() {
+        (function detectPlatform() {
             const userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
             if (/android/i.test(userAgent)) {
@@ -14,15 +14,12 @@
                 window.location.href = "market://details?id=com.vi.torchroyalematch3";
             } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
                 // Redirect iOS users to the App Store
-                window.location.href = "https://apps.apple.com/vg/app/torch-royale/id1643388166";
+                window.location.href = "itms-apps://apps.apple.com/vg/app/torch-royale/id1643388166";
             } else {
                 // Fallback for other platforms (e.g., desktop browsers)
                 window.location.href = "https://play.google.com/store/apps/details?id=com.vi.torchroyalematch3";
             }
-        }
-
-        // Run the function on page load
-        window.onload = detectPlatform;
+        })();
     </script>
 </head>
 <body>
