@@ -5,7 +5,10 @@
       "namespace": "android_app",
       "package_name": "com.vi.torchroyalematch3",
       "sha256_cert_fingerprints":
-        ["9E:56:42:61:5E:84:7A:01:31:0A:B3:9D:93:13:9C:98:E9:A0:DE:83:99:03:D0:55:B3:73:55:DA:5C:B8:DB:99"]
+        [
+          "9E:56:42:61:5E:84:7A:01:31:0A:B3:9D:93:13:9C:98:E9:A0:DE:83:99:03:D0:55:B3:73:55:DA:5C:B8:DB:99",
+          "A7:FA:F1:06:89:FD:D5:98:68:6D:36:59:1B:DE:F0:E5:8F:F1:25:F9:E1:D5:1A:F8:27:DE:B7:D1:F8:4A:C9:63"
+        ]
     }
   }
 ]
