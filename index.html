@@ -5,18 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Deep Link Redirect</title>
     <script>
-        // Function to detect user platform
+        // Function to detect user platform and redirect to the appropriate store
         function detectPlatform() {
             const userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
             if (/android/i.test(userAgent)) {
-                // Redirect Android users
-                window.location.href = "https://play.google.com/store/apps/details?id=com.vi.torchroyalematch3";
+                // Redirect Android users to Google Play app
+                window.location.href = "market://details?id=com.vi.torchroyalematch3";
             } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-                // Redirect iOS users
+                // Redirect iOS users to the App Store
                 window.location.href = "https://apps.apple.com/vg/app/torch-royale/id1643388166";
             } else {
-                // Redirect other users (including computer users) to Google Play Store
+                // Fallback for other platforms (e.g., desktop browsers)
                 window.location.href = "https://play.google.com/store/apps/details?id=com.vi.torchroyalematch3";
             }
         }
@@ -29,8 +29,8 @@
     <h1>Redirecting...</h1>
     <p id="message">If you're not redirected, click the appropriate link below:</p>
     <ul>
-        <li><a href="https://play.google.com/store/apps/details?id=com.vi.torchroyalematch3">Android App</a></li>
-        <li><a href="https://apps.apple.com/vg/app/torch-royale/id1643388166">iOS App</a></li>
+        <li><a href="market://details?id=com.vi.torchroyalematch3">Open in Google Play (Android App)</a></li>
+        <li><a href="https://apps.apple.com/vg/app/torch-royale/id1643388166">Open in App Store (iOS App)</a></li>
     </ul>
 </body>
 </html>
