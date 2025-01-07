@@ -1,0 +1,11 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.vi.torchroyalematch3",
+      "sha256_cert_fingerprints":
+        ["9E:56:42:61:5E:84:7A:01:31:0A:B3:9D:93:13:9C:98:E9:A0:DE:83:99:03:D0:55:B3:73:55:DA:5C:B8:DB:99"]
+    }
+  }
+]
