@@ -5,29 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Deep Link Redirect</title>
     <script>
-        // Function to detect user platform
-        function detectPlatform() {
+        // Function to handle deep linking
+        function redirectToAppOrStore() {
             const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+            const androidDeepLink = "torch://open"; // Replace with your Android app's deep link
+            const iOSDeepLink = "torch://open"; // Replace with your iOS app's deep link
 
+            // Redirect links for app stores
+            const androidStoreLink = "https://play.google.com/store/apps/details?id=com.vi.torchroyalematch3";
+            const iOSStoreLink = "https://apps.apple.com/vg/app/torch-royale/id1643388166";
+
+            // Detect platform and attempt to open app immediately
             if (/android/i.test(userAgent)) {
-                // Redirect Android users
-                window.location.href = "https://play.google.com/store/apps/details?id=com.vi.torchroyalematch3";
+                window.location.href = androidDeepLink; // Attempt deep link
+                window.location.href = androidStoreLink; // Fallback if app is not installed
             } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-                // Redirect iOS users
-                window.location.href = "https://apps.apple.com/vg/app/torch-royale/id1643388166";
+                window.location.href = iOSDeepLink; // Attempt deep link
+                window.location.href = iOSStoreLink; // Fallback if app is not installed
             } else {
-                // Redirect other users (including computer users) to Google Play Store
-                window.location.href = "https://play.google.com/store/apps/details?id=com.vi.torchroyalematch3";
+                // Fallback to Google Play for other platforms
+                window.location.href = androidStoreLink;
             }
         }
 
         // Run the function on page load
-        window.onload = detectPlatform;
+        window.onload = redirectToAppOrStore;
     </script>
 </head>
 <body>
     <h1>Redirecting...</h1>
-    <p id="message">If you're not redirected, click the appropriate link below:</p>
+    <p>If you are not redirected, click the appropriate link below:</p>
     <ul>
         <li><a href="https://play.google.com/store/apps/details?id=com.vi.torchroyalematch3">Android App</a></li>
         <li><a href="https://apps.apple.com/vg/app/torch-royale/id1643388166">iOS App</a></li>
